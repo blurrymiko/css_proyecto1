@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookStore Librería Online</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +13,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <header>
       <div class="logo">
@@ -22,13 +22,12 @@
         />
       </div>
 
-      <div class="buscador">
-        <input type="text" placeholder="Título, autor o ISBN" />
-      </div>
-
       <div class="acciones-header">
-        <a href="#" class="cesta">CESTA</a>
-        <button class="login-btn">INICIAR SESIÓN</button>
+        <div class="buscador">
+          <input type="text" placeholder="Título, autor o ISBN" />
+        </div>
+        <a href="#" class="cesta">Cesta</a>
+        <button class="login-btn">Mi Cuenta</button>
       </div>
     </header>
 
@@ -45,49 +44,62 @@
     <main>
       <section class="estrenos">
         <h2>RECIÉN LLEGADOS</h2>
-        <div class="estreno-destacado">
-          <img
-            src="https://cdn.kobo.com/book-images/e9958aae-542c-4ee1-ac48-1910ec665ef5/353/569/90/False/no-tengas-miedo-3.jpg"
-            alt="Portada del libro No tengas miedo de Stephen King"
-          />
-          <div>
-            <h3>No tengas miedo - Stephen King</h3>
-            <p>
-              Un thriller sobrenatural de Stephen King que mezcla el terror con
-              lo cotidiano.
-            </p>
+        <div class="estrenos-contenido">
+          <div class="estreno-destacado">
+            <img
+              src="https://cdn.kobo.com/book-images/e9958aae-542c-4ee1-ac48-1910ec665ef5/353/569/90/False/no-tengas-miedo-3.jpg"
+              alt="Portada del libro No tengas miedo de Stephen King"
+            />
+            <div class="info">
+              <h3>No tengas miedo</h3>
+              <p class="autor">de Stephen King</p>
+              <p class="sinopsis">
+                Un thriller sobrenatural que mezcla el terror con lo cotidiano.
+                Una novela que te atrapará desde la primera página.
+              </p>
+            </div>
           </div>
+
+          <aside class="proximamente">
+            <h3>PRÓXIMAMENTE</h3>
+            <article>
+              <figure>
+                <img
+                  src="https://imagessl3.casadellibro.com/a/l/s7/63/9788408306863.webp"
+                  alt="El último secreto - Dan Brown"
+                />
+                <figcaption>
+                  <h3>El último secreto</h3>
+                  <p>Dan Brown</p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img
+                  src="https://imagessl0.casadellibro.com/a/l/s7/90/9788491299790.webp"
+                  alt="El susurro del fuego - Javier Castillo"
+                />
+                <figcaption>
+                  <h3>El susurro del fuego</h3>
+                  <p>Javier Castillo</p>
+                </figcaption>
+              </figure>
+            </article>
+            <article>
+              <figure>
+                <img
+                  src="https://imagessl6.casadellibro.com/a/l/s7/76/9788408307976.webp"
+                  alt="Sigue lloviendo - Alice Kellen"
+                />
+                <figcaption>
+                  <h3>Sigue lloviendo</h3>
+                  <p>Alice Kellen</p>
+                </figcaption>
+              </figure>
+            </article>
+          </aside>
         </div>
-        <aside class="proximamente">
-          <h3>PRÓXIMAMENTE</h3>
-          <article>
-            <figure>
-              <img
-                src="https://imagessl3.casadellibro.com/a/l/s7/63/9788408306863.webp"
-                alt="El último secreto - Dan Brown"
-              />
-              <figcaption>El último secreto - Dan Brown</figcaption>
-            </figure>
-          </article>
-          <article>
-            <figure>
-              <img
-                src="https://imagessl0.casadellibro.com/a/l/s7/90/9788491299790.webp"
-                alt="El susurro del fuego - Javier Castillo"
-              />
-              <figcaption>El susurro del fuego - Javier Castillo</figcaption>
-            </figure>
-          </article>
-          <article>
-            <figure>
-              <img
-                src="https://imagessl6.casadellibro.com/a/l/s7/76/9788408307976.webp"
-                alt="Sigue lloviendo - Alice Kellen"
-              />
-              <figcaption>Sigue lloviendo - Alice Kellen</figcaption>
-            </figure>
-          </article>
-        </aside>
       </section>
 
       <section class="novedades">
@@ -250,7 +262,7 @@
       </section>
 
       <section class="newsletter">
-        <h2>NEWSLETTER</h2>
+        <h2>¿Quieres estar al día?</h2>
         <form action="#" method="post">
           <input type="text" name="nombre" placeholder="Nombre" required />
           <input
@@ -262,10 +274,10 @@
           <input type="text" name="novela" placeholder="Novela favorita" />
 
           <fieldset>
-            <legend>Me interesa...</legend>
+            <legend>Me interesa saber sobre...</legend>
             <label
-              ><input type="checkbox" name="genero" value="terror" />
-              Terror</label
+              ><input type="checkbox" name="genero" value="fantasia" />
+              Fantasía</label
             >
             <label
               ><input type="checkbox" name="genero" value="romance" />
@@ -276,8 +288,16 @@
               ficción</label
             >
             <label
-              ><input type="checkbox" name="genero" value="no-ficcion" /> No
-              ficción</label
+              ><input type="checkbox" name="genero" value="ficcion" />
+              Ficción</label
+            >
+            <label
+              ><input type="checkbox" name="genero" value="juvenil" />
+              Juvenil</label
+            >
+            <label
+              ><input type="checkbox" name="genero" value="policiaca" /> Novela
+              negra</label
             >
           </fieldset>
 
@@ -288,8 +308,9 @@
 
     <footer>
       <div class="footer-col">
-        <p>Librería Fantástica</p>
-        <p>C/ Imaginaria, 123 - 28000 Madrid</p>
+        <p>BookStore Madrid</p>
+        <p>C/Arturo Sorio, 2</p>
+        <p>28000 Madrid</p>
       </div>
       <div class="footer-col">
         <a href="#"><img src="assets/icono-ig.svg" alt="Instagram" /></a>
@@ -306,7 +327,7 @@
         </ul>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Librería Fantástica. Todos los derechos reservados.</p>
+        <p>&copy;2025 BookStore Madrid. Todos los derechos reservados.</p>
       </div>
     </footer>
   </body>

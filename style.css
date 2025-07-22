@@ -479,7 +479,7 @@ footer p {
   color: white;
 }
 
-/*MediaQueries (Revisar resolución más grande ASIDE y apilamiento HEADER)*/
+/*MediaQueries (Usado un único media para un tamaño inferior a 640px ya que la propia web tiene un ancho limitado a 1200px)*/
 
 @media (max-width: 640px) {
   header {

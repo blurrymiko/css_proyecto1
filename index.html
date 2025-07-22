@@ -1,11 +1,27 @@
+<!-- Módulo 4. Desarrollo web CSS (Entrega: Proyecto I)-->
+
+<!-- Usada como referencia principal www.kobo.com y como referencia secundaria -->
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookStore Librería Online</title>
+    <meta
+      name="description"
+      content="Tienda de libros, novelas y ebooks en Madrid y online"
+    />
+    <meta
+      name="keywords"
+      content="Libros, Novelas, Ficcion, Libreria, Madrid, Ebook, Epub, Kindle"
+    />
+    <title>BookStore Madrid - Tu librería online</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://media.istockphoto.com/id/1034157536/es/vector/elemento-de-dise%C3%B1o-vectorial-para-la-tienda-de-libros.jpg?s=612x612&w=0&k=20&c=Q2t9GG4EHh1Ar2HdS8I7v1Hj_oPYQM1zgwdDEGowcbg="
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,34 +30,43 @@
     />
   </head>
   <body>
+    <body>
+  
     <header>
-      <div class="logo">
-        <img
-          src="https://media.istockphoto.com/id/1034157536/es/vector/elemento-de-dise%C3%B1o-vectorial-para-la-tienda-de-libros.jpg?s=612x612&w=0&k=20&c=Q2t9GG4EHh1Ar2HdS8I7v1Hj_oPYQM1zgwdDEGowcbg="
-          alt="Logo BookStore"
-        />
-      </div>
+  <div class="contenedor">
+    <div class="logo">
+      <img
+        src="https://media.istockphoto.com/id/1034157536/es/vector/elemento-de-dise%C3%B1o-vectorial-para-la-tienda-de-libros.jpg?s=612x612&w=0&k=20&c=Q2t9GG4EHh1Ar2HdS8I7v1Hj_oPYQM1zgwdDEGowcbg="
+        alt="Logo BookStore"
+      />
+    </div>
 
-      <div class="acciones-header">
-        <div class="buscador">
-          <input type="text" placeholder="Título, autor o ISBN" />
-        </div>
-        <a href="#" class="cesta">Cesta</a>
-        <button class="login-btn">Mi Cuenta</button>
-      </div>
-    </header>
+    <div class="acciones-header">
+  <div class="buscador">
+    <input type="text" placeholder="Título, autor o ISBN" />
+  </div>
+  <div class="acciones-header-bottom">
+    <a href="#" class="cesta">Cesta</a>
+    <button class="login-btn">Mi Cuenta</button>
+  </div>
+</div>
+  </div>
+</header>
 
     <nav class="menu-secundario">
+      <div class="contenedor-ancho">
       <ul>
-        <li><a href="#">LIBROS</a></li>
-        <li><a href="#">GÉNEROS</a></li>
-        <li><a href="#">AUTORES</a></li>
-        <li><a href="#">DISPOSITIVOS</a></li>
-        <li><a href="#">OFERTAS</a></li>
+        <li><a href="#novedades">LIBROS</a></li>
+        <li><a href="#novedades">GÉNEROS</a></li>
+        <li><a href="#novedades">AUTORES</a></li>
+        <li><a href="#ereaders">DISPOSITIVOS</a></li>
+        <li><a href="#newsletter">OFERTAS</a></li>
       </ul>
+      </div>
     </nav>
 
     <main>
+      <div class="contenedor-ancho">
       <section class="estrenos">
         <h2>RECIÉN LLEGADOS</h2>
         <div class="estrenos-contenido">
@@ -60,8 +85,7 @@
               <h3>No tengas miedo</h3>
               <p class="autor">de Stephen King</p>
               <p class="sinopsis">
-                Un thriller sobrenatural que mezcla el terror con lo cotidiano.
-                Una novela que te atrapará desde la primera página.
+                Emocionante, salvaje, adictiva y absorbente, Never Flinch es una de las novelas más ambiciosas y propulsivas de King. Una extraordinaria novedad literaria del maestro Stephen King: una historia con varios hilos narrativos, protagonizada por la querida detective Holly Gibney y con un dinámico elenco de personajes nuevos.
               </p>
             </div>
           </div>
@@ -126,10 +150,9 @@
         </div>
       </section>
 
-      <section class="novedades">
+      <section class="novedades" id="novedades">
         <h2>NOVEDADES</h2>
         <div class="productos-grid">
-          <!-- Tarjetas de libros -->
           <article>
             <a
               href="https://www.kobo.com/es/es/ebook/la-chica-que-vive-al-final-del-camino"
@@ -223,7 +246,7 @@
         </div>
       </section>
 
-      <section class="ereaders">
+      <section class="ereaders" id="ereaders">
         <h2>DISPOSITIVOS</h2>
         <div class="productos-grid">
           <article>
@@ -285,7 +308,7 @@
         </div>
       </section>
 
-      <section class="newsletter">
+      <section class="newsletter" id="newsletter">
         <h2>NEWSLETTER</h2>
         <form action="#" method="post">
           <input type="text" name="nombre" placeholder="Nombre" required />
@@ -327,9 +350,11 @@
           <button type="submit">¡SUBSCRIBIRME!</button>
         </form>
       </section>
+      </div>
     </main>
 
     <footer>
+      <div class="contenedor-ancho">
       <div class="footer-col">
         <p>BookStore Madrid</p>
         <p>C/Arturo Sorio, 2</p>
@@ -375,8 +400,10 @@
         </ul>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 BookStore Madrid. Todos los derechos reservados.</p>
+        <p>&copy;2025 BookStore Madrid. Todos los derechos reservados.</p>
+      </div>
       </div>
     </footer>
+    
   </body>
 </html>

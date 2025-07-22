@@ -7,6 +7,14 @@
   --fuente-principal: 'Roboto', sans-serif;
 }
 
+/* Último añadido. Intento imitar las webs de referencia para centrar el contenido a una escala razonable aunque el ancho de pantalla se inmenso */
+
+.contenedor-ancho {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,27 +33,36 @@ img {
   display: block;
 }
 
-/* HEADER */
 header {
   background-color: var(--color-naranja);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  flex-wrap: wrap;
 }
 
-header .logo img {
+header .contenedor {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.logo img {
   height: 50px;
+  max-width: 100%;
 }
 
 .acciones-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 1rem;
+  min-width: 300px;
 }
 
 .buscador input {
@@ -54,19 +71,6 @@ header .logo img {
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 250px;
-}
-
-.login-btn {
-  background-color: var(--color-blanco);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.login-btn:hover {
-  transform: scale(1.05);
 }
 
 .cesta {
@@ -83,7 +87,19 @@ header .logo img {
   transform: scale(1.05);
 }
 
-/* NAV */
+.login-btn {
+  background-color: var(--color-blanco);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}
+
 .menu-secundario {
   background-color: var(--color-rosa);
   padding: 0.5rem;
@@ -107,7 +123,6 @@ header .logo img {
   color: var(--color-blanco);
 }
 
-/* MAIN STRUCTURE */
 main {
   padding: 2rem;
   display: flex;
@@ -115,7 +130,6 @@ main {
   gap: 3rem;
 }
 
-/* ESTRENOS */
 .estrenos {
   display: flex;
   flex-direction: column;
@@ -166,7 +180,7 @@ main {
 
 .estreno-destacado .autor {
   font-weight: bold;
-  color: #555;
+  color: var(--color-naranja);
   margin: 0;
 }
 
@@ -176,7 +190,6 @@ main {
   line-height: 1.5;
 }
 
-/* PROXIMAMENTE */
 .proximamente {
   display: flex;
   flex-direction: column;
@@ -246,9 +259,14 @@ main {
 .proximamente figcaption p {
   font-size: 0.9rem;
   margin: 0.3rem 0 0;
+  color: var(--color-naranja);
 }
 
-/* NOVEDADES Y EREADERS */
+.novedades,
+.ereaders {
+  margin-top: 3rem;
+}
+
 .productos-grid {
   display: grid;
   gap: 1rem;
@@ -298,12 +316,12 @@ main {
   font-size: 0.9rem;
 }
 
-/* NEWSLETTER */
 .newsletter {
   background-color: var(--color-naranja);
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 3rem;
 }
 
 .newsletter h2 {
@@ -367,14 +385,17 @@ main {
   transform: scale(1.01);
 }
 
-/* FOOTER */
 footer {
   background-color: var(--color-negro);
   color: white;
   padding: 2rem;
+}
+
+footer .contenedor-ancho {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .footer-col {
@@ -456,4 +477,77 @@ footer p {
   text-align: center;
   font-size: 0.85rem;
   color: white;
+}
+
+/*MediaQueries (Revisar resolución más grande ASIDE y apilamiento HEADER)*/
+
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .acciones-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .buscador {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .buscador input {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .acciones-header-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .menu-secundario ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .estrenos-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .estreno-destacado {
+    grid-template-columns: 1fr;
+  }
+
+  .ereaders .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter input[type='text'],
+  .newsletter input[type='email'] {
+    max-width: 100%;
+  }
+
+  .newsletter fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .redes-sociales {
+    justify-content: center;
+  }
 }
